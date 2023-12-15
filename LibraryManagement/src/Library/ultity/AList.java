@@ -69,7 +69,6 @@ public class AList {
                         index -= 1;
                         break;
                     }
-
                 }
                 System.out.println("Xóa thành công");
                 return true;

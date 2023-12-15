@@ -1,7 +1,9 @@
 package Library.ultity;
 
+import Library.Main.SubMenu1;
 import Library.itf.ILibrary;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Book {
@@ -59,14 +61,21 @@ public class Book {
         id = sc.nextLine();
         System.out.println("Nhập vào tên sách: ");
         title = sc.nextLine();
-        System.out.println("Nhập vào thông tin tác giả: ");
-        author.inputAuthor();
+        Author a;
+        do {
+            System.out.println("Nhập vào ID tác giải");
+            String id = sc.nextLine();
+            a = SubMenu1.getAuthors().searchAuthorById(id);
+            if (a == null)
+                System.out.println("Tác giả không tồn tại");
+            author = a;
+        } while (a == null);
         System.out.println("Nhập vào giá sách:");
         price = Double.parseDouble(sc.nextLine());
     }
 
 
     public void displayBook() {
-        System.out.printf("%10s %-30s %s %10f",id,title,author,price);
+        System.out.printf("%-5s | %30s | %20s | %10s |\n", id, title, author.getName(), price);
     }
 }

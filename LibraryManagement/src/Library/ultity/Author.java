@@ -1,7 +1,5 @@
 package Library.ultity;
 
-import Library.itf.ILibrary;
-
 import java.util.Scanner;
 
 public class Author {
@@ -81,7 +79,7 @@ public class Author {
 
 
     public void displayAuthor() {
-        System.out.printf("%10s :Tác giả là: %s, email: %s, giới tính: %s, tuổi: %s.",id,name,email,gender,age);
+        System.out.printf("%-5s | %20s | %20s | %10s | %5s |\n",id,name,email,gender,age);
     }
 
 
